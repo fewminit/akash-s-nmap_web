@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Akash's Web Nmap Scanner</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background-color: #f4f4f4; }
+        input, select, button { padding: 10px; margin: 10px; }
+        .result { background: #fff; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>🌐 Akash's Web Nmap Scanner</h2>
+    <form method="post">
+        <input type="text" name="target" placeholder="Enter IP or Domain" required>
+        <select name="scan_type">
+            <option value="ping">Ping Scan</option>
+            <option value="port">Port Scan</option>
+            <option value="os">OS Detection</option>
+        </select>
+        <button type="submit">Scan</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Scan Result:</h3>
+        {{ result | safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
